@@ -1,0 +1,38 @@
+li a {
+    color: green;
+    font-size: 200%;
+}
+
+h1 {
+    color: red;
+}
+
+ul {
+    display: table;
+}
+
+fieldset {
+    display: block;
+    border-style: double;
+    border-color: lightblue;
+    width: fit-content;
+}
+
+input[type=radio]:checked {
+    color: red;
+}
+
+.legend {
+    margin-bottom: 0px;
+    margin-left: 16px;
+}
+
+.buttons {
+    padding: 12px;
+
+}
+
+body {
+    background: white url("images/background.gif") no-repeat;
+    font-size: 120%;
+}
