@@ -1,5 +1,0 @@
-#Env
-env_django
-
-#Temp
-*.pyc
