@@ -38,7 +38,7 @@ class Review(models.Model):
         Project, on_delete=models.CASCADE, null=True, blank=True
     )
     body = models.TextField(null=True, blank=True)
-    value = models.CharField(max_length=50, choices=VOTE_TYPE)
+    value = models.CharField(max_length=50, choices=VOTE_TYPE, default=VOTE_TYPE[0][1])
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
     id = models.UUIDField(

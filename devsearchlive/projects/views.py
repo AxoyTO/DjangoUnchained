@@ -3,7 +3,7 @@ from django.views import generic
 from django.http import HttpResponse
 from django.utils import timezone
 from .models import Project
-from .forms import ProjectForm
+from .forms import ProjectForm, ReviewForm
 
 
 # Create your views here.
@@ -19,7 +19,16 @@ def project(request, pk):
     template = "projects/project.html"
     # tags = project_object.tags.all()
     # reviews = project_object.review_set.all()
-    context = {"project": project_object}
+
+    form = ReviewForm()
+    form.fields["project"].widget.attrs["class"] = f"{project_object.title}"
+    if request.method == "POST":
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect(f"../{pk}")
+
+    context = {"project": project_object, "form": form}
 
     return render(request, template, context)
 
