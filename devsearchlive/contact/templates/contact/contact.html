@@ -1,0 +1,16 @@
+{% extends 'contact/base.html' %} {% load crispy_forms_tags %} {% include
+main.html %} {% block body %}
+<div class="mx-auto my-4 text-center">
+  <h1>Contact Us</h1>
+</div>
+<div class="container">
+  <form action="" method="post">
+    {% csrf_token %} {{ form | crispy }}
+
+    <a href="{% url 'projects:projects' %}"
+      ><button class="btn btn-primary" type="button">Go back</button></a
+    >
+    <button class="btn btn-success my-3" type="submit">Send message</button>
+  </form>
+</div>
+{% endblock %}

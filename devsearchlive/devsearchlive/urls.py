@@ -18,10 +18,12 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-from projects import views
+from . import views
 
 urlpatterns = [
     path("", include("projects.urls")),
+    path("contact/", include("contact.urls")),
+    path("about/", views.about, name="about"),
     path("admin/", admin.site.urls),
 ]
 
