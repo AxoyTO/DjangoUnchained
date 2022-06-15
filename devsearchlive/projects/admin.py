@@ -12,7 +12,7 @@ class ProjectAdmin(admin.ModelAdmin):
     list_filter = ["created"]
     search_fields = ["title"]
     fieldsets = [
-        ("About the project", {"fields": ["title", "description"]}),
+        ("About the project", {"fields": ["title", "description", "featured_image"]}),
         ("Links", {"fields": ["demo_link", "source_link"]}),
         ("Votes", {"fields": ["vote_total", "vote_ratio"]}),
         ("Tags", {"fields": ["tags"]}),

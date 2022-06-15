@@ -1,9 +1,13 @@
 {% extends 'main.html' %} {% block content %}
 <div><a href="{% url 'projects:update-project' project.id %}">Update project</a></div>
 <div style="padding-top:0.5em"><a href="{% url 'projects:delete-project' project.id %}">Delete project</a></div>
+
+<img style="max-width: 500px;" src="{{project.imageURL}}" alt="">
+
 <h1>
   {{project.title}} {% if project.topRated %}<strong>&#9733</strong>{% endif %}
 </h1>
+
 <div style="margin-top:1em">
 {% for tag in project.tags.all %}
   <span style="border:1px solid #888; padding:0.5em;">{{tag}}</span>
