@@ -12,7 +12,7 @@ class Project(models.Model):
     vote_total = models.PositiveIntegerField(default=0)
     vote_ratio = models.PositiveIntegerField(default=0)
     tags = models.ManyToManyField("Tag", blank=True)
-    created = models.DateTimeField(auto_now_add=True)
+    created = models.DateTimeField("Date created", auto_now_add=True)
     id = models.UUIDField(
         default=uuid.uuid4, unique=True, primary_key=True, editable=False
     )
